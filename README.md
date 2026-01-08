@@ -22,4 +22,8 @@ A MATLAB GUI for Atlas-to-Atlas Mapping
 
 * Maximum Overlap: Each region in the source atlas is mapped to the region in the target atlas that shares the largest number of voxels.
 
+## Version History
+
+* v1.1 (2026-01-08): Added the function to save the relabeled source atlas as `*_mapped.nii` for visual check.
+
 
