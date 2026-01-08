@@ -30,10 +30,20 @@ for curr_sour_idx = 1:sour_num
         overlap_dat(curr_sour_idx, curr_targ_idx) = curr_overlap;
     end
 end
-% Map the source ID to the target ID with the max overlap. 
+% Map the source ID to the target ID with the max overlap.
 [max_overlap, max_targ_IDs] = max(overlap_dat, [], 2);
 output_dat = [sour_IDs max_targ_IDs];
 % Save output
 out_fname = fullfile(OutputFolder, [OutputPrefix, '_mapping.txt']);
 dlmwrite(out_fname, output_dat, 'delimiter', ' ');
+% Save relabeled source atlas based on the mapping
+sour_relabel = zeros(size(sour_data));
+for curr_sour_idx = 1:sour_num
+    curr_sour_ID = output_dat(curr_sour_idx,1);
+    curr_targ_ID = output_dat(curr_sour_idx,2);
+    sour_relabel(sour_data == curr_sour_ID) = curr_targ_ID;
+end
+sour_hdr = spm_vol(SourceAtlas);
+sour_hdr.fname = fullfile(OutputFolder, [OutputPrefix, '_mapped.nii']);
+spm_write_vol(sour_hdr, sour_relabel);
 

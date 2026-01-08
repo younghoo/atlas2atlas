@@ -1,10 +1,10 @@
 function atlas2atlas_gui()
 % The function to create the GUI for atlas mapping
 % Author: Alex / 2025-11-30 / free_learner@163.com / alexbrain.cn
-% Version: 1.0
+% Version: 1.1, 2026-01-08
 
 % Create the main figure
-S.fig = figure('Position', [200 200 550 400], 'MenuBar', 'none', 'NumberTitle','off', 'Name', 'Atlas2Atlas (v1.0)', 'Resize', 'off');
+S.fig = figure('Position', [200 200 550 400], 'MenuBar', 'none', 'NumberTitle','off', 'Name', 'Atlas2Atlas (v1.1)', 'Resize', 'off');
 
 % Create the button to select the source atlas file
 S.SourceButton = uicontrol('Style', 'pushbutton', 'String', 'Select Source Atlas', 'Position', [50, 325, 200, 50]);
