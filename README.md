@@ -18,4 +18,8 @@ A MATLAB GUI for Atlas-to-Atlas Mapping
 
 4. The mapping results will be saved as `*_mapping.txt`. The first column contains the label indices from the source atlas, and the second column contains the corresponding label indices from the target atlas.
 
+## Mapping Metric
+
+* Maximum Overlap: Each region in the source atlas is mapped to the region in the target atlas that shares the largest number of voxels.
+
 
